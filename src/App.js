@@ -6,7 +6,7 @@ import AboutPage from './Pages/AboutPage';
 import EducationPage from './Pages/SkillPage';
 import ProjectPage from './Pages/ProjectPage';
 import ContactPage from './Pages/ContactPage';
-import { Route, Switch as Switching } from "react-router-dom";
+import { Route, Switch as Switching, Redirect, HashRouter } from "react-router-dom";
 import Brightness4Icon from '@material-ui/icons/Brightness4';
 import Switch from '@material-ui/core/Switch';
 import MenuIcon from '@material-ui/icons/Menu';
@@ -71,25 +71,25 @@ function App() {
 
 
 
+        <HashRouter basename="/">
+          <Switching>
+            <Route path="/home" render={(props) => <HomePage {...props} />} />
+            <Redirect from="/" exact to="/home" />
 
-        <Switching>
-          <Route path="%PUBLIC_URL%/" exact>
-            <HomePage />
-          </Route>
-          <Route path="%PUBLIC_URL%/about" exact>
-            <AboutPage />
-          </Route>
-          <Route path="%PUBLIC_URL%/skill" exact>
-            <EducationPage />
-          </Route>
-          <Route path="%PUBLIC_URL%/projects" exact>
-            <ProjectPage />
-          </Route>
-          <Route path="%PUBLIC_URL%/contact" exact>
-            <ContactPage />
-          </Route>
-        </Switching>
-
+            <Route path="/about" exact>
+              <AboutPage />
+            </Route>
+            <Route path="/skill" exact>
+              <EducationPage />
+            </Route>
+            <Route path="/projects" exact>
+              <ProjectPage />
+            </Route>
+            <Route path="/contact" exact>
+              <ContactPage />
+            </Route>
+          </Switching>
+        </HashRouter>
       </MainContentStyled>
     </div>
   );
