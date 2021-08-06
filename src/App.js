@@ -73,19 +73,19 @@ function App() {
 
 
         <Switching>
-          <Route path="/" exact>
+          <Route path="%PUBLIC_URL%/" exact>
             <HomePage />
           </Route>
-          <Route path="/about" exact>
+          <Route path="%PUBLIC_URL%/about" exact>
             <AboutPage />
           </Route>
-          <Route path="/skill" exact>
+          <Route path="%PUBLIC_URL%/skill" exact>
             <EducationPage />
           </Route>
-          <Route path="/projects" exact>
+          <Route path="%PUBLIC_URL%/projects" exact>
             <ProjectPage />
           </Route>
-          <Route path="/contact" exact>
+          <Route path="%PUBLIC_URL%/contact" exact>
             <ContactPage />
           </Route>
         </Switching>
